@@ -1,9 +1,6 @@
 {
   "name": "resize-handler",
   "homepage": "https://github.com/DasRed/resize-handler",
-  "authors": [
-    "DasRed <marco.starker@gmx.net>"
-  ],
   "description": "Handler for the resize event of the global window",
   "main": "",
   "license": "MIT",
