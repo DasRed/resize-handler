@@ -33,10 +33,10 @@
         },
 
         /**
-         * @param Function callback
-         * @returns ResizeHandler
+         * @param {Function} callback
+         * @returns {ResizeHandler}
          */
-        onResize:  {
+        onResize: {
             value: function() {
                 this.listeners.forEach(function(listener) {
                     listener();
@@ -50,10 +50,10 @@
         },
 
         /**
-         * @param Function callback
+         * @param {Function} callback
          * @returns {ResizeHandler}
          */
-        register:  {
+        register: {
             value: function(callback) {
                 if ((callback instanceof Function) === false) {
                     throw new TypeError('Callback must be a function.');
@@ -69,10 +69,10 @@
         },
 
         /**
-         * @param Function callback
-         * @returns ResizeHandler
+         * @param {Function} callback
+         * @returns {ResizeHandler}
          */
-        unregister:  {
+        unregister: {
             value: function(callback) {
                 if ((callback instanceof Function) === false) {
                     throw new TypeError('Callback must be a function.');
