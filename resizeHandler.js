@@ -1,15 +1,15 @@
 'use strict';
 
-(function (factory) {
+(function (root, factory) {
     // AMD (Register as an anonymous module)
     if (typeof define === 'function' && define.amd) {
-        define([window], factory);
+        define([root], factory);
     }
     // Browser globals
     else {
-        window.ResizeHandler = factory(window);
+        root.ResizeHandler = factory(root);
     }
-}(function (global) {
+}(this, function (root) {
 
     /**
      * @constructor
@@ -17,7 +17,7 @@
     function ResizeHandler() {
         this.listeners = [];
 
-        global.addEventListener('resize', this.onResize.bind(this));
+        root.addEventListener('resize', this.onResize.bind(this));
     }
 
     // proto
