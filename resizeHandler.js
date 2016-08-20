@@ -30,65 +30,49 @@
             enumerable: false,
             configurable: false,
             writable: true
-        },
-
-        /**
-         * @param {Function} callback
-         * @returns {ResizeHandler}
-         */
-        onResize: {
-            value: function() {
-                this.listeners.forEach(function(listener) {
-                    listener();
-                });
-
-                return this;
-            },
-            enumerable: false,
-            configurable: false,
-            writable: false
-        },
-
-        /**
-         * @param {Function} callback
-         * @returns {ResizeHandler}
-         */
-        register: {
-            value: function(callback) {
-                if ((callback instanceof Function) === false) {
-                    throw new TypeError('Callback must be a function.');
-                }
-
-                this.listeners.push(callback);
-
-                return this;
-            },
-            enumerable: true,
-            configurable: false,
-            writable: false
-        },
-
-        /**
-         * @param {Function} callback
-         * @returns {ResizeHandler}
-         */
-        unregister: {
-            value: function(callback) {
-                if ((callback instanceof Function) === false) {
-                    throw new TypeError('Callback must be a function.');
-                }
-
-                this.listeners = this.listeners.filter(function(listener) {
-                    return listener !== callback;
-                });
-
-                return this;
-            },
-            enumerable: true,
-            configurable: false,
-            writable: false
         }
     });
+
+    /**
+     * @returns {ResizeHandler}
+     */
+    ResizeHandler.prototype.onResize = function () {
+        this.listeners.forEach(function (listener) {
+            listener();
+        });
+
+        return this;
+    };
+
+    /**
+     * @param {Function} callback
+     * @returns {ResizeHandler}
+     */
+    ResizeHandler.prototype.register = function (callback) {
+        if ((callback instanceof Function) === false) {
+            throw new TypeError('Callback must be a function.');
+        }
+
+        this.listeners.push(callback);
+
+        return this;
+    };
+
+    /**
+     * @param {Function} callback
+     * @returns {ResizeHandler}
+     */
+    ResizeHandler.prototype.unregister = function (callback) {
+        if ((callback instanceof Function) === false) {
+            throw new TypeError('Callback must be a function.');
+        }
+
+        this.listeners = this.listeners.filter(function (listener) {
+            return listener !== callback;
+        });
+
+        return this;
+    };
 
     return new ResizeHandler();
 }));
