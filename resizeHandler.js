@@ -45,7 +45,12 @@
     };
 
     /**
-     * @param {Function} callback
+     * defines the callback for register
+     * @callback ResizeHandler~registerCallback
+     */
+
+    /**
+     * @param {ResizeHandler~registerCallback} callback
      * @returns {ResizeHandler}
      */
     ResizeHandler.prototype.register = function (callback) {
@@ -59,7 +64,7 @@
     };
 
     /**
-     * @param {Function} callback
+     * @param {ResizeHandler~registerCallback} callback
      * @returns {ResizeHandler}
      */
     ResizeHandler.prototype.unregister = function (callback) {
