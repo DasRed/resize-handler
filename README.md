@@ -2,6 +2,7 @@
 ## Install
 ```
 bower install resize-handler --save
+npm install resize-handler --save
 ```
 
 ## Example 

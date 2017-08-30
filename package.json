@@ -1,0 +1,16 @@
+{
+  "name": "resize-handler",
+  "version": "1.0.6",
+  "description": "Handler for the resize event of the global window",
+  "main": "resizeHandler.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DasRed/resize-handler.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DasRed/resize-handler/issues"
+  },
+  "homepage": "https://github.com/DasRed/resize-handler#readme"
+}
